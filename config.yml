@@ -1,0 +1,6 @@
+lda-folder: models
+lda-filename: LDA_questions_unique_3
+topic-names:
+  0: General
+  1: Spanish
+  2: Network
