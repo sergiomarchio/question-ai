@@ -6,7 +6,6 @@ function go() {
     });
 
     inputQuestion.value = "";
-    inputQuestion.focus();
 }
 
 function get_topic(question, action) {
