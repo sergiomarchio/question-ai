@@ -3,9 +3,11 @@ function go() {
 
     get_topic(inputQuestion.value, (v) => {
         topicResponse.textContent = JSON.stringify(v, null, 2);
+        topicName.textContent = v["topic-name"];
     });
 
     inputQuestion.value = "";
+    topicName.value = "";
 }
 
 function get_topic(question, action) {
@@ -27,10 +29,11 @@ function topicLinkChange() {
 
 const topicURL = "https://question-ai.api.serg.ink/topic?"
 
-const buttonGo = document.querySelector("button#go");
 const inputQuestion = document.querySelector("input#question");
-const topicResponse = document.querySelector("#topic-response");
+const buttonGo = document.querySelector("button#go");
+const topicName = document.querySelector("#topic-name");
 const topicLink = document.querySelector("#topic-link");
+const topicResponse = document.querySelector("#topic-response");
 
 
 buttonGo.addEventListener("click", go);
