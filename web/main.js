@@ -26,7 +26,7 @@ function topicLinkChange() {
 }
 
 
-const topicURL = "http://localhost:8000/topic?"
+const topicURL = "https://question-ai.api.serg.ink/topic?"
 
 const buttonGo = document.querySelector("button#go");
 const inputQuestion = document.querySelector("input#question");
