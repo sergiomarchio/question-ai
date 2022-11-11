@@ -64,7 +64,7 @@ class MyLDA:
 
         topic_id, topic_p = max(predicted, key=lambda x: x[1])
         
-        return topic_id, self.topics[topic_id], topic_p
+        return topic_id, self.topics[topic_id], float(topic_p)
 
 
 topic_lda = MyLDA()
