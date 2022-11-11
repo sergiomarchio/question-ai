@@ -26,11 +26,13 @@ def topic(question=None):
     if not question:
         return {"error": "Please specify a question"}
 
-    topic_id, topic_name = topic_lda.get_topic(question)
+    topic_id, topic_name, topic_p = topic_lda.get_topic(question)
+    
     return {
         "question": question,
         "topic-id": topic_id,
-        "topic-name": topic_name
+        "topic-name": topic_name,
+        "topic-p": topic_p
     }
 
 
