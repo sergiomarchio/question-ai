@@ -4,7 +4,7 @@ function go() {
     getTopic(inputQuestion.value, (v) => {
         topicResponse.textContent = JSON.stringify(v, null, 2);
         topicName.textContent = v["topic-name"];
-        topicProb.textContent = v["topic-p"].toFixed(3) || "-";
+        topicProb.textContent = if ("topic-p" in v) v["topic-p"].toFixed(3);
     });
 
     inputQuestion.value = "";
