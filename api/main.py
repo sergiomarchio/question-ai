@@ -32,3 +32,9 @@ def topic(question=None):
         "topic-id": topic_id,
         "topic-name": topic_name
     }
+
+
+@app.get("/topics")
+def topics():
+
+    return topic_lda.topics
