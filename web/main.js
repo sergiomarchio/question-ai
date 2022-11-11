@@ -4,6 +4,7 @@ function go() {
     getTopic(inputQuestion.value, (v) => {
         topicResponse.textContent = JSON.stringify(v, null, 2);
         topicName.textContent = v["topic-name"];
+        topicProb.textContent = v["topic-p"].toFixed(3);
     });
 
     inputQuestion.value = "";
@@ -58,6 +59,7 @@ const topicsURL = baseURL + "/topics"
 const inputQuestion = document.querySelector("input#question");
 const buttonGo = document.querySelector("button#go");
 const topicName = document.querySelector("#topic-name");
+const topicProb = document.querySelector("#topic-p");
 const topicsNames = document.querySelector("#topics-names");
 const topicLink = document.querySelector("#topic-link");
 const topicsLink = document.querySelector("#topics-link");
