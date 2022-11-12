@@ -1,3 +1,16 @@
+function clear() {
+    inputQuestion.value = "";
+    hideClearButton();
+}
+
+function showClearButton() {
+    buttonClear.removeAttribute("hidden");
+}
+
+function hideClearButton() {
+    buttonClear.setAttribute("hidden", "");
+}
+
 function go() {
     console.log(inputQuestion.value);
 
@@ -7,7 +20,6 @@ function go() {
         topicProb.textContent = "topic-p" in v ? v["topic-p"].toFixed(3) : "";
     });
 
-    inputQuestion.value = "";
     topicName.value = "";
 }
 
@@ -57,6 +69,7 @@ const topicURL = baseURL + "/topic?"
 const topicsURL = baseURL + "/topics"
 
 const inputQuestion = document.querySelector("input#question");
+const buttonClear = document.querySelector("button#clear");
 const buttonGo = document.querySelector("button#go");
 const topicName = document.querySelector("#topic-name");
 const topicProb = document.querySelector("#topic-p");
@@ -67,11 +80,19 @@ const topicResponse = document.querySelector("#topic-response");
 const topicsResponse = document.querySelector("#topics-response");
 
 
+buttonClear.addEventListener("click", clear);
+
 buttonGo.addEventListener("click", go);
+
 inputQuestion.addEventListener("keyup", (e) => {
     if (e.key === "Enter") {
         go();
     } else {
+        if (inputQuestion.value === "") {
+            hideClearButton();
+        } else {
+            showClearButton();
+        }
         topicLinkChange();
     }
 });
