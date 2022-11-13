@@ -1,6 +1,7 @@
 function clear() {
     inputQuestion.value = "";
     hideClearButton();
+    inputQuestion.focus();
 }
 
 function showClearButton() {
